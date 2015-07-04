@@ -1,0 +1,44 @@
+
+/*Cefndir y dudalen */
+body.login {
+	background-color: #ffffff;
+}
+
+/*Holl ardal logio mewn o dop y dudalen hyd y links ar waelod y blwch logio mewn */
+body.login div#login {
+	background-color: #ffffff;
+}
+
+/*Lleoliad Eicon WP */
+body.login div#login h1 {
+  background-color: #ffffff;
+	margin:150px auto 0 auto;
+}
+
+/* Link ar eicon WP */
+body.login div#login h1 a {
+  background-color: #ffffff;
+}
+
+/*Bocs gyda enw defnyddiwr a cyfrinair a bocs "Cofio Fi" & Mewngofnodi */
+body.login div#login form#loginform {
+  background-color: #ffffff;
+	-webkit-box-shadow: 10px 10px 32px -6px rgba(0,0,0,0.75);
+ 	-moz-box-shadow: 10px 10px 32px -6px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 32px -6px rgba(0,0,0,0.75);
+}
+
+/*Tu ol i mewnbynnau (Enw Defnyddiwr/Cyfrinair/Cofio fi) */
+body.login div#login form#loginform p {
+  background-color: #ffffff;
+}
+
+/*Tu ol i destyn y mewnbynnau (Enw Defnyddiwr/Cyfrinair/Cofio fi) */
+body.login div#login form#loginform p label {
+  background-color: #ffffff;
+}
+
+/*Tu fewn i'r ardal mewnbwn & btowm */
+body.login div#login form#loginform input {
+	
+}

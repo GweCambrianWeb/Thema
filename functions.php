@@ -352,3 +352,15 @@ function thema_gychwynnol_dashfwrdd_help() {
 	echo '<p>'.__("Mae Thema wedi ei weithredu. Croeso i WordPress amlieithog.", 'thema').'</p>';
 	echo __('<iframe width="100%" height = "300px" src="https://www.youtube.com/embed/w9OhG7Wx1CY" frameborder="0" allowfullscreen></iframe>', 'thema');
 }
+
+/*
+A DYLAI HWN FOD YN YR "OPTIONS"? - "Defnyddio steil y thema ar gyfer y dudalen logio mewn?"
+*/
+
+/*
+Llwytho steil ar gyfer y dudalen admin
+*/
+function llwytho_css_steil_admin() {
+    wp_enqueue_style( 'steil-login-amgen', get_template_directory_uri() . '/steil-admin.css' );
+}
+add_action( 'login_enqueue_scripts', 'llwytho_css_steil_admin' );
