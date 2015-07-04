@@ -327,3 +327,28 @@ add_action( 'admin_head', 'thema_tynnu_tud_groeso_o_ddewislen' );
 function thema_tynnu_tud_groeso_o_ddewislen() {
 	remove_submenu_page( 'index.php', 'tudalen-groeso-thema' );
 }
+
+/*
+
+Adio Paneli yn y bwrdd dash.
+
+*/
+
+add_action('wp_dashboard_setup', 'thema_gychwynnol_gosod_panel_dashfwrdd');
+
+function thema_gychwynnol_gosod_panel_dashfwrdd() {
+
+	global $wp_meta_boxes;
+
+	$teitl_dashfwrdd_help = __("Help a'r Thema");
+
+	add_meta_box('thema_gychwynnol_dash_help', $teitl_dashfwrdd_help, 'thema_gychwynnol_dashfwrdd_help', 'dashboard', 'side', 'high');
+
+}
+
+
+function thema_gychwynnol_dashfwrdd_help() {
+	echo '<h1>'.__('Croeso i Thema.', 'thema').'</h1>';
+	echo '<p>'.__("Mae Thema wedi ei weithredu. Croeso i WordPress amlieithog.", 'thema').'</p>';
+	echo __('<iframe width="100%" height = "300px" src="https://www.youtube.com/embed/w9OhG7Wx1CY" frameborder="0" allowfullscreen></iframe>', 'thema');
+}
