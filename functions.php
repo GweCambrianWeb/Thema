@@ -217,3 +217,113 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/*
+
+Adio tudalen groeso unwaith mae'r thema wedi ei weithredu.
+
+Gweler yma - http://premium.wpmudev.org/blog/plugin-welcome-screen/
+
+*/
+
+
+register_activation_hook( __FILE__, 'thema_gweithredu_tud_groeso' );
+
+add_action("after_switch_theme", "thema_gweithredu_tud_groeso", 10 ,  2);
+
+function thema_gweithredu_tud_groeso() {
+	set_transient( '_tud_groeso_ailgyfeirio_gweithredu', true, 30 );
+}
+
+add_action( 'admin_init', 'thema_ailgyfeirio_tud_groeso_ar_weithredu' );
+
+function thema_ailgyfeirio_tud_groeso_ar_weithredu() {
+
+	// Bail if no activation redirect
+	if ( !get_transient( '_tud_groeso_ailgyfeirio_gweithredu' ) ) {
+		return;
+	}
+
+	// Delete the redirect transient
+	delete_transient( '_tud_groeso_ailgyfeirio_gweithredu' );
+
+	// Bail if activating from network, or bulk
+	if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+		return;
+	}
+
+	// Ailgyfeirio i dudalen groeso
+	wp_safe_redirect( add_query_arg( array( 'page' => 'tudalen-groeso-thema' ), admin_url( 'index.php' ) ) );
+
+}
+
+add_action('admin_menu', 'thema_tudalen_groeso');
+
+function thema_tudalen_groeso() {
+	add_dashboard_page(
+	'Croeso i Thema',
+	'Croeso i Thema',
+	'read',
+	'tudalen-groeso-thema',
+	'cynnwys_tud_groeso_thema'
+	);
+}
+
+function cynnwys_tud_groeso_thema() {
+
+	?>
+	<style>
+	.thema-tudgroeso-cynhwysyn{
+		margin:100px auto;
+		width: 80%;
+		border: 0px solid black;
+		}
+	.thema-tudgroeso-trydydd{
+		width:250px;
+		float:left;
+	}
+	</style>
+	<div class = "thema-tudgroeso-cynhwysyn">
+	<?php
+	echo '<h1>'.__('Croeso i Thema', 'thema').'</h1>';
+
+	echo '<p>'.__("Diolch am ddewis Thema! Mae'r thema yma wedi ei ddatblygu i fod yn hawdd i'w defnyddio i bawb, gydag amlieithrwydd yn greiddiol.", 'thema').'</p>';
+
+	echo '<div class = "thema-tudgroeso-trydydd">';
+	echo '<h2>'.__('Cychwyn', 'thema').'</h2>';
+
+	echo '<p>'.__('Cychwyn ar ddefnyddio Thema.','thema').'</p>';
+
+	echo'</div>';
+
+	echo'<div class = "thema-tudgroeso-trydydd">';
+	echo'<h2>'._('Help', 'thema').'</h2>';
+
+	echo '<p>'.__('Os oes angen help arnoch i ddefnyddio Thema, dyma dudalennau a all helpu:','thema').'</p>';
+/*
+Rhestr  o links i help.
+*/
+
+	echo '</div>';
+
+	echo '<div class = "thema-tudgroeso-trydydd">';
+	echo '<h2>'.__('Tiwtorialau', 'thema').'</h2>';
+
+/*
+Tiwtorialau ar gyfer defnyddwyr.
+*/
+
+
+	echo'</div>';
+
+  echo '</div>';
+
+	}
+
+
+add_action( 'admin_head', 'thema_tynnu_tud_groeso_o_ddewislen' );
+
+function thema_tynnu_tud_groeso_o_ddewislen() {
+	remove_submenu_page( 'index.php', 'tudalen-groeso-thema' );
+}
