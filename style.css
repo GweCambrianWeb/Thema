@@ -1,5 +1,5 @@
 /*
-Theme Name: thema
+Theme Name: Thema
 Theme URI: http://thema.cambrianweb.com
 Author: Gwe Cambrian Web
 Author URI: http://cambrianweb.com
@@ -51,6 +51,7 @@ html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
+
 }
 
 body {
@@ -266,6 +267,15 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+/*
+# Fonts
+*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
 body,
 button,
 input,
@@ -284,10 +294,15 @@ h4,
 h5,
 h6 {
 	clear: both;
+	color:#fff;
+	font-family: 'Raleway';
 }
 
 p {
 	margin-bottom: 1.5em;
+	font-family: 'Open Sans';
+	color:#fff;
+	font-size:18px;
 }
 
 dfn,
@@ -381,14 +396,17 @@ hr {
 ul,
 ol {
 	margin: 0 0 1.5em 3em;
+	color:#fff;
 }
 
 ul {
 	list-style: disc;
+	color:#fff;
 }
 
 ol {
 	list-style: decimal;
+	color:#fff;
 }
 
 li > ul,
@@ -525,23 +543,33 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	height:50px;
+	position:absolute;
+	bottom:20px;
+	text-align: center;
 }
 
 .main-navigation ul {
 	display: none;
 	list-style: none;
-	margin: 0;
-	padding-left: 0;
+	max-width:90%;
+	width:1200px;
+	margin:0 auto;
+	text-align:center;
 }
 
 .main-navigation li {
 	float: left;
 	position: relative;
+	font-size: 18px;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color:#fff;
+	height: 50px;
+	padding:15px 20px 0 15px;
 }
 
 .main-navigation ul ul {
@@ -568,6 +596,9 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+	color:#fff;
+	border-bottom: 2px solid #fff;
+	font-size: inherit;
 }
 
 .main-navigation ul ul :hover > a,
@@ -885,4 +916,121 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*-------------------------------------------------------------
+## CSS y cynnwys
+--------------------------------------------------------------*/
+body{
+		background-color:#2B2B2B;
+}
+/*-----------------------------------
+* Header CSS
+-------------------------------------*/
+#masthead{
+	height:250px;
+	position:relative;
+	background-color:#ac2223;
+	-webkit-box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+
+
+}
+.site-branding{
+	padding:15px;
+	text-align:left;
+	margin-left:250px;
+	color:#fff;
+}
+.site-title{
+	font-size:55px;
+	margin:0;
+	color:#fff;
+}
+.site-title a{
+	text-decoration: none;
+	color:#fff;
+
+}
+.site-description{
+	margin:0;
+}
+/*-----------------------------------
+* Menu? CSS
+-------------------------------------*/
+
+/*-----------------------------------
+* Content CSS
+-------------------------------------*/
+.site-content{
+	max-width:100%;
+	width:1200px;
+	margin:0 auto;
+	border: 0px solid #111;
+
+}
+.content-area{
+	width:70%;
+	height:100%;
+	float:left;
+	margin: 25px auto;
+	padding:0 30px 0 15px;
+	border: 0px solid #C0C0C0;
+
+}
+.widget-area{
+	width:30%;
+	float:right;
+	padding: 20px 0 0 30px;
+}
+.widget-title{
+	font-size:22px;
+}
+.comments-area{
+	width:100%;
+}
+
+/*
+# Footer
+*/
+
+.site-footer{
+	background:#1a1a1a;
+	color:#fff;
+	position:relative;
+	min-height: 150px;
+	-webkit-box-shadow: 0px -10px 10px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px -10px 10px -6px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px -10px -6px rgba(0,0,0,0.75);
+
+}
+.site-info{
+	text-align:center;
+	margin: 0 auto 10px auto;
+}
+
+
+/*-------------------------------------------------------------
+## Ymatebol
+--------------------------------------------------------------*/
+@media screen and (max-width: 800px) {
+	.content-area{
+		width:100%;
+		float:left;
+	}
+
+	.widget-area{
+		width:100%;
+		float:right;
+	}
+
+	.site-branding{
+		padding:15px;
+		margin: 0px;
+		text-align:center;
+		color:#fff;
+	}
+
+
 }
