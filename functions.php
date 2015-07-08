@@ -22,6 +22,7 @@ function thema_setup() {
 	 */
 	load_theme_textdomain( 'thema', get_template_directory() . '/languages' );
 
+
 	//Mynnu bod y plugin "Polylang" yn cael ei lwytho
 	require_once dirname( __FILE__ ) . '/required-plugins/class-tgm-plugin-activation.php';
 
@@ -86,8 +87,6 @@ function thema_setup() {
 	}/*
 	A oes modd cael yr ieithoedd wedi eu gosod yn awtomatig yn Polylang?
 	*/
-
-
 
 
 
@@ -171,8 +170,35 @@ function thema_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Troedyn 1', 'thema' ),
+		'id'            => 'footer-widget-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Troedyn 2', 'thema' ),
+		'id'            => 'footer-widget-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Troedyn 3', 'thema' ),
+		'id'            => 'footer-widget-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'thema_widgets_init' );
@@ -333,7 +359,6 @@ function thema_tynnu_tud_groeso_o_ddewislen() {
 Adio Paneli yn y bwrdd dash.
 
 */
-
 add_action('wp_dashboard_setup', 'thema_gychwynnol_gosod_panel_dashfwrdd');
 
 function thema_gychwynnol_gosod_panel_dashfwrdd() {
@@ -352,15 +377,3 @@ function thema_gychwynnol_dashfwrdd_help() {
 	echo '<p>'.__("Mae Thema wedi ei weithredu. Croeso i WordPress amlieithog.", 'thema').'</p>';
 	echo __('<iframe width="100%" height = "300px" src="https://www.youtube.com/embed/w9OhG7Wx1CY" frameborder="0" allowfullscreen></iframe>', 'thema');
 }
-
-/*
-A DYLAI HWN FOD YN YR "OPTIONS"? - "Defnyddio steil y thema ar gyfer y dudalen logio mewn?"
-*/
-
-/*
-Llwytho steil ar gyfer y dudalen admin
-*/
-function llwytho_css_steil_admin() {
-    wp_enqueue_style( 'steil-login-amgen', get_template_directory_uri() . '/steil-admin.css' );
-}
-add_action( 'login_enqueue_scripts', 'llwytho_css_steil_admin' );
