@@ -27,7 +27,19 @@
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
+		<div class = "thema-language-switch">
+			<?php
+				if(function_exists('pll_the_languages')){
+					$args = array(
+						'show_names' => 1,
+						'hide_current' => false
+					);
 
+					pll_the_languages($args);
+
+				}
+			 ?>
+		</div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'thema' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
