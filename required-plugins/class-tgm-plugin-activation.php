@@ -158,26 +158,26 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             self::$instance = $this;
 
             $this->strings = array(
-                'page_title'                     => __( 'Install Required Plugins', 'tgmpa' ),
-                'menu_title'                     => __( 'Install Plugins', 'tgmpa' ),
-                'installing'                     => __( 'Installing Plugin: %s', 'tgmpa' ),
-                'oops'                           => __( 'Something went wrong.', 'tgmpa' ),
-                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
-                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
-                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
-                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ),
-                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ),
-                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ),
-                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ),
-                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ),
-                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-                'return'                         => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-                'dashboard'                      => __( 'Return to the dashboard', 'tgmpa' ),
-                'plugin_activated'               => __( 'Plugin activated successfully.', 'tgmpa' ),
-                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'tgmpa' ),
-                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'tgmpa' ),
-                'dismiss'                        => __( 'Dismiss this notice', 'tgmpa' ),
+                'page_title'                     => __( "Llwytho Ategion Angenrheidiol", 'tgmpa' ),
+                'menu_title'                     => __( "Llwytho Ategion", 'tgmpa' ),
+                'installing'                     => __( "Llwytho Ategyn: %s", 'tgmpa' ),
+                'oops'                           => __( "Aeth rhywbeth o'i le.", 'tgmpa' ),
+                'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
+                'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
+                'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion." ), // %1$s = plugin name(s).
+                'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
+                'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
+                'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion." ), // %1$s = plugin name(s).
+                'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s." ), // %1$s = plugin name(s).
+                'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion." ), // %1$s = plugin name(s).
+                'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion" ),
+                'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion" ),
+                'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'tgmpa' ),
+                'dashboard'                      => __( "Yn ol i'r dashfwrdd", 'tgmpa' ),
+                'plugin_activated'               => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'tgmpa' ),
+                'activated_successfully'         => __( "Gweithredwyd yr ategyn canlynol yn llwyddianus:" 'tgmpa' ),
+                'complete'                       => __( "Pob ategyn wedi eu llwytho a'u gweithredu yn llwyddianus. %1$s", 'tgmpa' ),
+                'dismiss'                        => __( "Cael gwared o'r neges yma", 'tgmpa' ),
             );
 
             // Set the current WordPress version.
