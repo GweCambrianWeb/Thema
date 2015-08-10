@@ -569,18 +569,28 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color:#fff;
+
 	height: 50px;
 	padding:15px 20px 0 15px;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	background-color: #404040;
 	float: left;
+	max-width:220px;
+	width:auto;
 	position: absolute;
-	top: 1.5em;
+	top: 2.7em;
 	left: -999em;
 	z-index: 99999;
+	margin:0;
+	padding:0;
+	white-space: nowrap;
+	-webkit-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+	box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+
 }
 
 .main-navigation ul ul ul {
@@ -589,10 +599,14 @@ a:active {
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+
 }
 
 .main-navigation ul ul li {
+	text-align:left;
+	font-size:14px;
+	clear: both;
+	display:block;
 
 }
 
@@ -600,11 +614,13 @@ a:active {
 .main-navigation li.focus > a {
 	color:#fff;
 	border-bottom: 2px solid #fff;
-	font-size: inherit;
+
 }
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
+	color:#fff;
+	border-bottom:0px;
 }
 
 .main-navigation ul ul a:hover,
@@ -624,7 +640,10 @@ a:active {
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
+	border-bottom: 2px solid #fff;
 }
+
+
 
 /* Small menu. */
 .menu-toggle,
