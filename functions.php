@@ -53,34 +53,34 @@ function thema_setup() {
 		* end of each line for what each argument will be.
 		*/
 		$config = array(
-        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
-        'menu'         => 'tgmpa-install-plugins', // Menu slug.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
-        'dismiss_msg'  => 'Rhaid cael yr ategyn yma wedi ei weithredu.',                      // If 'dismissable' is false, this message will be output at top of nag.
-        'is_automatic' => true,                   // Automatically activate plugins after installation or not.
-        'message'      => 'Llwytho yr ategion angenrheidiol.',                      // Message to output right before the plugins table.
-        'strings'      => array(
-            'page_title'                      => __( "Llwytho Ategion Angenrheidiol", 'tgmpa' ),
-            'menu_title'                      => __( "Llwytho Ategion", 'tgmpa' ),
-            'installing'                      => __( "Llwytho Ategyn: %s", 'tgmpa' ), // %s = plugin name.
-            'oops'                            => __( "Aeth rhywbeth o'i le gydag API yr ategyn.", 'tgmpa' ),
-            'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
-            'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
-            'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion." ), // %1$s = plugin name(s).
-            'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
-            'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
-            'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion." ), // %1$s = plugin name(s).
-            'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s." ), // %1$s = plugin name(s).
-            'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion." ), // %1$s = plugin name(s).
-            'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion" ),
-            'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion" ),
-            'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'tgmpa' ),
-            'plugin_activated'                => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'tgmpa' ),
-            'complete'                        => __( "Holl ategion wedi eu llwytho a'u gweithredu yn llwyddianus. %s", 'tgmpa' ), // %s = dashboard link.
-            'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-        )
-    );
+			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
+			'menu'         => 'tgmpa-install-plugins', // Menu slug.
+			'has_notices'  => true,                    // Show admin notices or not.
+			'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
+			'dismiss_msg'  => 'Rhaid cael yr ategyn yma wedi ei weithredu.',                      // If 'dismissable' is false, this message will be output at top of nag.
+			'is_automatic' => true,                   // Automatically activate plugins after installation or not.
+			'message'      => 'Llwytho yr ategion angenrheidiol.',                      // Message to output right before the plugins table.
+			'strings'      => array(
+					'page_title'                      => __( "Llwytho Ategion Angenrheidiol", 'tgmpa' ),
+					'menu_title'                      => __( "Llwytho Ategion", 'tgmpa' ),
+					'installing'                      => __( "Llwytho Ategyn: %s", 'tgmpa' ), // %s = plugin name.
+					'oops'                            => __( "Aeth rhywbeth o'i le gydag API yr ategyn.", 'tgmpa' ),
+					'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
+					'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
+					'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion." ), // %1$s = plugin name(s).
+					'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
+					'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
+					'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion." ), // %1$s = plugin name(s).
+					'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s." ), // %1$s = plugin name(s).
+					'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion." ), // %1$s = plugin name(s).
+					'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion" ),
+					'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion" ),
+					'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'tgmpa' ),
+					'plugin_activated'                => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'tgmpa' ),
+					'complete'                        => __( "Holl ategion wedi eu llwytho a'u gweithredu yn llwyddianus. %s", 'tgmpa' ), // %s = dashboard link.
+					'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+			)
+	);
 
 		tgmpa( $plugins, $config );
 
@@ -139,7 +139,7 @@ function thema_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'thema_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => '2B2B2B',
 		'default-image' => '',
 	) ) );
 }

@@ -14,6 +14,30 @@ function thema_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	$wp_customize->add_section("cyfryngau-cymdeithasol", array(
+      "title" => __("Cyfryngau Cymdeithasol", "thema"),
+			"description" => __("Rhowch URL y cyfryngau cymdeithasol yma er mwyn cael linc iddyn nhw o'ch gwefan.", "thema"),
+      "priority" => 30,
+  ));
+
+	// Add settings for each social media
+
+	//add setting for Facebook
+	$wp_customize->add_setting("url-facebook", array(
+        "default" => "http://facebook.com/",
+        "transport" => "postMessage",
+    ));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+	      $wp_customize,
+	      "url-facebook",
+	      array(
+            "label" => __("Facebook", "url-facebook"),
+            "section" => "cyfryngau-cymdeithasol",
+            "type" => "text",
+	        )
+	    ));
 }
 add_action( 'customize_register', 'thema_customize_register' );
 

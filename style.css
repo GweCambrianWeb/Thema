@@ -569,7 +569,6 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-
 	height: 50px;
 	padding:15px 20px 0 15px;
 }
@@ -612,14 +611,12 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-	color:#fff;
 	border-bottom: 2px solid #fff;
 
 }
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
-	color:#fff;
 	border-bottom:0px;
 }
 
