@@ -975,6 +975,9 @@ body{
 
 .thema-language-switch{
 	height:50px;
+	position:relative;
+	top:-100px;
+	right:20px;
 	width:auto;
 	float:right;
 	margin-right:100px;
@@ -1115,6 +1118,13 @@ body{
 		text-align:center;
 		color:#fff;
 	}
+	.thema-language-switch{
+		height:50px;
+		position:relative;
+		top:0px;
+		right:40%;
+		margin:0 auto;
 
+	}
 
 }
