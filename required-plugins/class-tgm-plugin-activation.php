@@ -175,7 +175,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'tgmpa' ),
                 'dashboard'                      => __( "Yn ol i'r dashfwrdd", 'tgmpa' ),
                 'plugin_activated'               => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'tgmpa' ),
-                'activated_successfully'         => __( "Gweithredwyd yr ategyn canlynol yn llwyddianus:" 'tgmpa' ),
+                'activated_successfully'         => __( "Gweithredwyd yr ategyn canlynol yn llwyddianus:", 'tgmpa' ),
                 'complete'                       => __( "Pob ategyn wedi eu llwytho a'u gweithredu yn llwyddianus. %1$s", 'tgmpa' ),
                 'dismiss'                        => __( "Cael gwared o'r neges yma", 'tgmpa' ),
             );
