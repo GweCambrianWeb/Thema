@@ -303,6 +303,7 @@ p {
 	font-family: 'Open Sans';
 	color:#fff;
 	font-size:18px;
+	text-align:justify;
 }
 
 dfn,
@@ -518,7 +519,7 @@ a {
 }
 
 a:visited {
-	color: #a1a1a1;
+	color: #fff;
 }
 
 a:hover,

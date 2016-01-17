@@ -313,19 +313,27 @@ function cynnwys_tud_groeso_thema() {
 	</style>
 	<div class = "thema-tudgroeso-cynhwysyn">
 	<?php
-	echo '<h1>'.__('Croeso i Thema', 'thema').'</h1>';
+	echo '<h1>'.__('Croeso i', 'thema').'</h1><img style = "display:inline;"src = "'.get_template_directory_uri().'/images/Thema_Logo_200x47.png'.'">';
 
 	echo '<p>'.__("Diolch am ddewis Thema! Mae'r thema yma wedi ei ddatblygu i fod yn hawdd i'w defnyddio i bawb, gydag amlieithrwydd yn greiddiol.", 'thema').'</p>';
-
+	if(!function_exists('pll_the_languages')){
+		echo '<h3>'. __('Nid yw\'r ategyn "Polylang" wedi ei lwytho. Hwn sydd yn gadael i chi gael gwefan ddwyieithog.', 'thema').'</h3>';
+		echo '<p><a href = "'.get_site_url().'/wp-admin/themes.php?page=tgmpa-install-plugins" class = "button-primary">'.__('Ewch i lwytho\'r ategion priodol nawr.','thema').'</a></p>';
+	}
 	echo '<div class = "thema-tudgroeso-trydydd">';
 	echo '<h2>'.__('Cychwyn', 'thema').'</h2>';
 
-	echo '<p>'.__('Cychwyn ar ddefnyddio Thema.','thema').'</p>';
+	echo '<p>'.__('Mae gwefan lwyddianus yn ddibynnol ar lawer o ffactorau. Yn gyntaf, gwnewch yn siwr eich bod yn creu y tudalennau canlynol:','thema').'</p>';
+	echo '<ul>';
+		echo '<li>'.__('Tudalen Gartref/Hafan','thema').'</li>';
+		echo '<li>'.__('Tudalen Amdanom/Amdanaf','thema').'</li>';
+		echo '<li>'.__('Tudalen Gyswllt','thema').'</li>';
+	echo '</ul>';
 
 	echo'</div>';
 
 	echo'<div class = "thema-tudgroeso-trydydd">';
-	echo'<h2>'._('Help', 'thema').'</h2>';
+	echo'<h2>'.__('Help','thema').'</h2>';
 
 	echo '<p>'.__('Os oes angen help arnoch i ddefnyddio Thema, dyma dudalennau a all helpu:','thema').'</p>';
 /*
