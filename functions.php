@@ -287,12 +287,13 @@ function thema_ailgyfeirio_tud_groeso_ar_weithredu() {
 add_action('admin_menu', 'thema_tudalen_groeso');
 
 function thema_tudalen_groeso() {
-	add_dashboard_page(
+	add_menu_page(
 	'Croeso i Thema',
 	'Croeso i Thema',
 	'read',
 	'tudalen-groeso-thema',
-	'cynnwys_tud_groeso_thema'
+	'cynnwys_tud_groeso_thema',
+	get_template_directory_uri().'/images/ThemaLogoMenuIcon.png'
 	);
 }
 
@@ -348,11 +349,7 @@ Tiwtorialau ar gyfer defnyddwyr.
 	}
 
 
-add_action( 'admin_head', 'thema_tynnu_tud_groeso_o_ddewislen' );
 
-function thema_tynnu_tud_groeso_o_ddewislen() {
-	remove_submenu_page( 'index.php', 'tudalen-groeso-thema' );
-}
 
 /*
 
