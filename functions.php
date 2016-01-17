@@ -375,5 +375,16 @@ function thema_gychwynnol_gosod_panel_dashfwrdd() {
 function thema_gychwynnol_dashfwrdd_help() {
 	echo '<h1>'.__('Croeso i Thema.', 'thema').'</h1>';
 	echo '<p>'.__("Mae Thema wedi ei weithredu. Croeso i WordPress amlieithog.", 'thema').'</p>';
-	echo __('<iframe width="100%" height = "300px" src="https://www.youtube.com/embed/w9OhG7Wx1CY" frameborder="0" allowfullscreen></iframe>', 'thema');
+	if(function_exists('pll_default_language')){
+		echo __('<h2>Iaith Ragosodedig y Wefan:</h2>');
+		echo pll_default_language('name');
+		echo __('<h2>Ieithoedd ar y Wefan</h2>');
+		echo '<ul>';
+		foreach (pll_languages_list(array('fields' =>'name' )) as $iaith){
+			echo '<li>'.$iaith.'</li>';
+		}
+		echo '</ul>';
+		echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Adio Iaith').'</a>';
+	}
+
 }
