@@ -981,13 +981,13 @@ body{
 	margin-right:100px;
 
 }
-.lang-item{
+.thema-language-switch .lang-item{
 	list-style: none;
 	display:inline;
 
 }
 
-.lang-item a{
+.thema-language-switch .lang-item a{
 
 	border: 1px solid #fff;
 	color:#fff;
@@ -999,7 +999,7 @@ body{
   transition-timing-function: linear;
 }
 
-.lang-item a:hover{
+.thema-language-switch .lang-item a:hover{
 	padding:15px;
 	color:#ac2223;
 	border: 1px solid #dfacac;

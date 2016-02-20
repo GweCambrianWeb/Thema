@@ -91,7 +91,8 @@ function thema_setup() {
 		wp_enqueue_style( 'thema-google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans|Raleway', false );
 		wp_enqueue_style( 'thema-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', false );
 	}
-
+	//Llwytho ffontiau ar ochr admin a ochr flaen
+	add_action( 'admin_enqueue_scripts', 'thema_cofrestru_ffontiau' );
 	add_action( 'wp_enqueue_scripts', 'thema_cofrestru_ffontiau' );
 
 
@@ -310,29 +311,94 @@ function cynnwys_tud_groeso_thema() {
 		margin:100px auto;
 		width: 80%;
 		border: 0px solid black;
+		clear:both;
 		}
 	.thema-tudgroeso-trydydd{
 		width:250px;
 		float:left;
+		padding:15px;
+		border: 0px solid blue;
 	}
 	</style>
-	<div class = "thema-tudgroeso-cynhwysyn">
+
+
+
 	<?php
+	echo '<div class = "thema-tudgroeso-cynhwysyn">';
 	echo '<h1>'.__('Croeso i', 'thema').'</h1><img style = "display:inline;"src = "'.get_template_directory_uri().'/images/Thema_Logo_200x47.png'.'">';
 
 	echo '<p>'.__("Diolch am ddewis Thema! Mae'r thema yma wedi ei ddatblygu i fod yn hawdd i'w defnyddio i bawb, gydag amlieithrwydd yn greiddiol.", 'thema').'</p>';
-	if(!function_exists('pll_the_languages')){
+	$polylang_loaded = function_exists('pll_the_languages');
+
+	if(!$polylang_loaded){
 		echo '<h3>'. __('Nid yw\'r ategyn "Polylang" wedi ei lwytho. Hwn sydd yn gadael i chi gael gwefan ddwyieithog.', 'thema').'</h3>';
 		echo '<p><a href = "'.get_site_url().'/wp-admin/themes.php?page=tgmpa-install-plugins" class = "button-primary">'.__('Ewch i lwytho\'r ategion priodol nawr.','thema').'</a></p>';
 	}
+	echo '</div>';
+	?>
+
+	<div class = "thema-tudgroeso-cynhwysyn">
+			<div class = "thema-tudgroeso-trydydd">
+				<?php
+					if($polylang_loaded){
+						echo '<p style = "text-align:center"><i class="fa fa-check-circle-o fa-align-center" style ="color:#167D4F;font-size:125px;"></i></p>';
+						echo "<h2 style = 'text-align:center'>".__('Polylang wedi llwytho','thema')."</h2>";
+					}
+				else{
+					echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>';
+					echo "<h2 style = 'text-align:center'>".__('Polylang heb ei lwytho','thema')."</h2>";
+					echo '<p style = "text-align:center"><a href = "'.get_site_url().'/wp-admin/themes.php?page=tgmpa-install-plugins" class = "button-primary">'.__('Ewch i lwytho\'r ategion priodol nawr.','thema').'</a></p>';
+
+				}
+				 ?>
+			</div>
+			<div class = "thema-tudgroeso-trydydd">
+				<?php
+				if($polylang_loaded){
+					$thema_number_of_lang = count(pll_languages_list());
+
+					if($thema_number_of_lang > 0){
+						echo '<p style = "text-align:center"><i class="fa fa-check-circle-o fa-align-center" style ="color:#167D4F;font-size:125px;"></i></p>';
+						printf( "<h2 style = 'text-align:center'>".__('%s iaith wedi ei lwytho', 'thema'), $thema_number_of_lang)."</h2>";
+						echo '<ul>';
+						foreach (pll_languages_list(array('fields' =>'name' )) as $iaith){
+							echo '<li>'.$iaith.'</li>';
+						}
+						echo '</ul>';
+						echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith').'</a>';
+					}
+				else{
+					echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>';
+					echo "<h2 style = 'text-align:center'>".__('Dim ieithoedd wedi eu llwytho','thema')."</h2>";
+					echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith').'</a>';
+						}
+					}
+					else{
+						echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>';
+						echo "<h2 style = 'text-align:center'>".__('Angen llwytho Polylang cyn ychwanegu ieithoedd','thema')."</h2>";
+
+					}
+
+				 ?>
+			</div>
+			<div class = "thema-tudgroeso-trydydd">
+
+				<?php echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>'; ?>
+				<h2>Trydydd Chec yn Fama</h2>
+			</div>
+	</div>
+
+
+	<?php
+	echo '<div class = "thema-tudgroeso-cynhwysyn">';
 	echo '<div class = "thema-tudgroeso-trydydd">';
 	echo '<h2>'.__('Cychwyn', 'thema').'</h2>';
 
 	echo '<p>'.__('Mae gwefan lwyddianus yn ddibynnol ar lawer o ffactorau. Yn gyntaf, gwnewch yn siwr eich bod yn creu y tudalennau canlynol:','thema').'</p>';
 	echo '<ul>';
-		echo '<li>'.__('Tudalen Gartref/Hafan','thema').'</li>';
-		echo '<li>'.__('Tudalen Amdanom/Amdanaf','thema').'</li>';
-		echo '<li>'.__('Tudalen Gyswllt','thema').'</li>';
+		echo '<li><i class="fa fa-home fa-fw"></i>'.__('Tudalen Gartref/Hafan','thema').'</li>';
+		echo '<li><i class="fa fa-users fa-fw"></i>'.__('Tudalen Amdanom/Amdanaf','thema').'</li>';
+		echo '<li><i class="fa fa-envelope fa-fw"></i>'.__('Tudalen Gyswllt','thema').'</li>';
 	echo '</ul>';
 
 	echo'</div>';
@@ -386,15 +452,15 @@ function thema_gychwynnol_dashfwrdd_help() {
 	echo '<h1>'.__('Croeso i Thema.', 'thema').'</h1>';
 	echo '<p>'.__("Mae Thema wedi ei weithredu. Croeso i WordPress amlieithog.", 'thema').'</p>';
 	if(function_exists('pll_default_language')){
-		echo __('<h2>Iaith Ragosodedig y Wefan:</h2>');
+		echo __('<h3>Iaith Ragosodedig y Wefan:</h3>');
 		echo pll_default_language('name');
-		echo __('<h2>Ieithoedd ar y Wefan</h2>');
+		echo __('<h3>Ieithoedd ar y Wefan</h3>');
 		echo '<ul>';
 		foreach (pll_languages_list(array('fields' =>'name' )) as $iaith){
 			echo '<li>'.$iaith.'</li>';
 		}
 		echo '</ul>';
-		echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Adio Iaith').'</a>';
+		echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith').'</a>';
 	}
 
 }
