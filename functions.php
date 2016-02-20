@@ -84,10 +84,15 @@ function thema_setup() {
 
 		tgmpa( $plugins, $config );
 
-	}/*
-	A oes modd cael yr ieithoedd wedi eu gosod yn awtomatig yn Polylang?
-	*/
+	}
 
+
+	function thema_cofrestru_ffontiau(){
+		wp_enqueue_style( 'thema-google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans|Raleway', false );
+		wp_enqueue_style( 'thema-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', false );
+	}
+
+	add_action( 'wp_enqueue_scripts', 'thema_cofrestru_ffontiau' );
 
 
 	// Add default posts and comments RSS feed links to head.
