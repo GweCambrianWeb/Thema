@@ -158,10 +158,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             self::$instance = $this;
 
             $this->strings = array(
-                'page_title'                     => __( "Llwytho Ategion Angenrheidiol", 'tgmpa' ),
-                'menu_title'                     => __( "Llwytho Ategion", 'tgmpa' ),
-                'installing'                     => __( "Llwytho Ategyn: %s", 'tgmpa' ),
-                'oops'                           => __( "Aeth rhywbeth o'i le.", 'tgmpa' ),
+                'page_title'                     => __( "Llwytho Ategion Angenrheidiol", 'thema' ),
+                'menu_title'                     => __( "Llwytho Ategion", 'thema' ),
+                'installing'                     => __( "Llwytho Ategyn: %s", 'thema' ),
+                'oops'                           => __( "Aeth rhywbeth o'i le.", 'thema' ),
                 'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
                 'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
                 'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion." ), // %1$s = plugin name(s).
@@ -172,12 +172,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion." ), // %1$s = plugin name(s).
                 'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion" ),
                 'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion" ),
-                'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'tgmpa' ),
-                'dashboard'                      => __( "Yn ol i'r dashfwrdd", 'tgmpa' ),
-                'plugin_activated'               => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'tgmpa' ),
-                'activated_successfully'         => __( "Gweithredwyd yr ategyn canlynol yn llwyddianus:", 'tgmpa' ),
-                'complete'                       => __( "Pob ategyn wedi eu llwytho a'u gweithredu yn llwyddianus. %1$s", 'tgmpa' ),
-                'dismiss'                        => __( "Cael gwared o'r neges yma", 'tgmpa' ),
+                'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'thema' ),
+                'dashboard'                      => __( "Yn ol i'r dashfwrdd", 'thema' ),
+                'plugin_activated'               => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'thema' ),
+                'activated_successfully'         => __( "Gweithredwyd yr ategyn canlynol yn llwyddianus:", 'thema' ),
+                'complete'                       => __( "Pob ategyn wedi eu llwytho a'u gweithredu yn llwyddianus. %1$s", 'thema' ),
+                'dismiss'                        => __( "Cael gwared o'r neges yma", 'thema' ),
             );
 
             // Set the current WordPress version.
@@ -529,7 +529,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 // All plugins are active, so we display the complete string and hide the plugin menu.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'thema' ) . '">' . __( 'Return to the Dashboard', 'thema' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 }
 
@@ -1164,23 +1164,23 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( ! empty( $plugin['source'] ) ) {
                     // The plugin must be from a private repository.
                     if ( preg_match( '|^http(s)?://|', $plugin['source'] ) ) {
-                        $table_data[$i]['source'] = __( 'Private Repository', 'tgmpa' );
+                        $table_data[$i]['source'] = __( 'Private Repository', 'thema' );
                     // The plugin is pre-packaged with the theme.
                     } else {
-                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'tgmpa' );
+                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'thema' );
                     }
                 }
                 // The plugin is from the WordPress repository.
                 else {
-                    $table_data[$i]['source'] = __( 'WordPress Repository', 'tgmpa' );
+                    $table_data[$i]['source'] = __( 'WordPress Repository', 'thema' );
                 }
 
-                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'tgmpa' ) : __( 'Recommended', 'tgmpa' );
+                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'thema' ) : __( 'Recommended', 'thema' );
 
                 if ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'tgmpa' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'thema' ) );
                 } elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'tgmpa' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'thema' ) );
                 }
 
                 $table_data[$i]['file_path'] = $plugin['file_path'];
@@ -1285,7 +1285,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             if ( ! isset( $installed_plugins[$item['file_path']] ) ) {
                 $actions = array(
                     'install' => sprintf(
-                        '<a href="%1$s" title="' . esc_attr__( 'Install', 'tgmpa' ) . ' %2$s">' . __( 'Install', 'tgmpa' ) . '</a>',
+                        '<a href="%1$s" title="' . esc_attr__( 'Install', 'thema' ) . ' %2$s">' . __( 'Install', 'thema' ) . '</a>',
                         esc_url(
                             wp_nonce_url(
                                 add_query_arg(
@@ -1309,7 +1309,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             elseif ( is_plugin_inactive( $item['file_path'] ) ) {
                 $actions = array(
                     'activate' => sprintf(
-                        '<a href="%1$s" title="' . esc_attr__( 'Activate', 'tgmpa' ) . ' %2$s">' . __( 'Activate', 'tgmpa' ) . '</a>',
+                        '<a href="%1$s" title="' . esc_attr__( 'Activate', 'thema' ) . ' %2$s">' . __( 'Activate', 'thema' ) . '</a>',
                         esc_url(
                             add_query_arg(
                                 array(
@@ -1345,10 +1345,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
         public function column_cb( $item ) {
             $plugin_url = $item['url']; // 'repo' (no escaping needed), URL or file path
 
-            if ( __( 'Private Repository', 'tgmpa' ) === $item['source'] ) {
+            if ( __( 'Private Repository', 'thema' ) === $item['source'] ) {
                 // Escape external URLs
                 $plugin_url = esc_url( $plugin_url );
-            } elseif ( __( 'Pre-Packaged', 'tgmpa' ) === $item['source'] ) {
+            } elseif ( __( 'Pre-Packaged', 'thema' ) === $item['source'] ) {
                 // Encode file path for use in attribute
                 $plugin_url = urlencode( TGM_Plugin_Activation::$instance->default_path . $plugin_url );
             }
@@ -1369,7 +1369,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
          */
         public function no_items() {
 
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'tgmpa' ), network_admin_url() );
+            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'thema' ), network_admin_url() );
             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
         }
@@ -1385,10 +1385,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
             $columns = array(
                 'cb'     => '<input type="checkbox" />',
-                'plugin' => __( 'Plugin', 'tgmpa' ),
-                'source' => __( 'Source', 'tgmpa' ),
-                'type'   => __( 'Type', 'tgmpa' ),
-                'status' => __( 'Status', 'tgmpa' )
+                'plugin' => __( 'Plugin', 'thema' ),
+                'source' => __( 'Source', 'thema' ),
+                'type'   => __( 'Type', 'thema' ),
+                'status' => __( 'Status', 'thema' )
             );
 
             return $columns;
@@ -1406,8 +1406,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
         public function get_bulk_actions() {
 
             $actions = array(
-                'tgmpa-bulk-install'  => __( 'Install', 'tgmpa' ),
-                'tgmpa-bulk-activate' => __( 'Activate', 'tgmpa' ),
+                'tgmpa-bulk-install'  => __( 'Install', 'thema' ),
+                'tgmpa-bulk-activate' => __( 'Activate', 'thema' ),
             );
 
             return $actions;
@@ -1641,7 +1641,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( is_wp_error( $activate ) ) {
                     echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
                 } else {
-                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'tgmpa' ), $imploded );
+                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'thema' ), $imploded );
                 }
 
                 // Update recently activated plugins option.
@@ -1936,12 +1936,12 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
                      */
                     public function install_strings() {
 
-                        $this->strings['no_package']          = __( 'Install package not available.', 'tgmpa' );
-                        $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'tgmpa' );
-                        $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'tgmpa' );
-                        $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'tgmpa' );
-                        $this->strings['process_failed']      = __( 'Plugin install failed.', 'tgmpa' );
-                        $this->strings['process_success']     = __( 'Plugin installed successfully.', 'tgmpa' );
+                        $this->strings['no_package']          = __( 'Install package not available.', 'thema' );
+                        $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'thema' );
+                        $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'thema' );
+                        $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'thema' );
+                        $this->strings['process_failed']      = __( 'Plugin install failed.', 'thema' );
+                        $this->strings['process_success']     = __( 'Plugin installed successfully.', 'thema' );
 
                     }
 
@@ -1952,8 +1952,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
                      */
                     public function activate_strings() {
 
-                        $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'tgmpa' );
-                        $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'tgmpa' );
+                        $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'thema' );
+                        $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'thema' );
 
                     }
 
@@ -2066,19 +2066,19 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
                         // Automatic activation strings.
                         if ( TGM_Plugin_Activation::$instance->is_automatic ) {
-                            $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-                            $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'tgmpa' );
-                            $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+                            $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'thema' );
+                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'thema' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'thema' ) . '</span><span class="hidden">' . __( 'Hide Details', 'thema' ) . '</span>.</a>';
+                            $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'thema' );
+                            $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'thema' );
                         }
                         // Default installation strings.
                         else {
-                            $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-                            $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'tgmpa' );
-                            $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'tgmpa' );
-                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-                            $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'tgmpa' );
-                            $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+                            $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'thema' );
+                            $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'thema' );
+                            $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'thema' );
+                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'thema' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'thema' ) . '</span><span class="hidden">' . __( 'Hide Details', 'thema' ) . '</span>.</a>';
+                            $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'thema' );
+                            $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'thema' );
                         }
 
                     }
@@ -2170,7 +2170,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
                         // All plugins are active, so we display the complete string and hide the menu to protect users.
                         if ( empty( $complete ) ) {
-                            echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+                            echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'thema' ) . '">' . __( 'Return to the Dashboard', 'thema' ) . '</a>' ) . '</p>';
                             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                         }
 
