@@ -198,6 +198,10 @@ input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
 }
+button:hover{
+	background-color: #EC3B3C;
+
+}
 
 button[disabled],
 html input[disabled] {
@@ -438,25 +442,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	background-color: #ac2223; /* Coch Thema */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	max-width: 250px;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	background-color: #EC3B3C;
 }
 
 button:focus,
@@ -511,12 +512,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #fff;
+	color: #B1B1B1;
 	text-decoration: underline;
 }
 
 a:visited {
-	color: #fff;
+	color: #B1B1B1;
 }
 
 a:hover,
@@ -570,7 +571,9 @@ a:active {
 	height: 50px;
 	padding:15px 20px 0 15px;
 }
-
+.main-navigation a {
+	color:#fff;
+}
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	background-color: #404040;
@@ -590,6 +593,7 @@ a:active {
 
 }
 
+
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
@@ -604,18 +608,20 @@ a:active {
 	font-size:14px;
 	clear: both;
 	display:block;
-
+	width:100%;
 }
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
 	border-bottom: 2px solid #fff;
 
+
 }
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
-	border-bottom:0px;
+	border-bottom:1px solid #fff;
+	background-color: #656565;
 }
 
 .main-navigation ul ul a:hover,
@@ -810,7 +816,40 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.entry-title a{
+	color:#fff;
+}
+.entry-meta{
+	font-size: 1.2em;
+	color:#B1B1B1;
+}
 
+.entry-meta a{
+	color: :#fff;
+}
+.entry-footer{
+	color:#B1B1B1;
+}
+.entry-footer a{
+	color: :#fff;
+}
+.entry-footer span{
+	padding:0 3px;
+}
+.entry-footer .edit-link a{
+	background-color: #ac2223; /* Coch Thema */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	max-width: 250px;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+}
+.entry-footer .edit-link a:hover{
+	background-color: #EC3B3C;
+}
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
