@@ -1,14 +1,14 @@
 /*
 Theme Name: Thema
-Theme URI: http://thema.cambrianweb.com
+Theme URI: http://thema.cymru
 Author: Gwe Cambrian Web
 Author URI: http://cambrianweb.com
-Description: Thema - Thema Amlieithog a Hygyrch ar gyfer gwefannau Gymraeg
+Description: Thema - Thema Amlieithog a Hygyrch ar gyfer gwefannau amlieithog
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thema
-Tags:
+Tags: red, custom-background, responsive-layout
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -650,6 +650,9 @@ a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	margin:0 auto;
+
+
 }
 
 @media screen and (min-width: 37.5em) {
@@ -658,7 +661,27 @@ a:active {
 	}
 	.main-navigation ul {
 		display: block;
+
 	}
+	.main-navigation ul{
+		width:100%;
+		display:block;
+	}
+
+
+}
+.main-navigation button{
+	margin: 0 auto;
+	color: transparent;
+	background:  url("./images/Mobile_Menu.png") no-repeat center center;
+	width:50px;
+	height:50px
+}
+
+
+.main-navigation.toggled ul li{
+	float:none;
+	background-color:#696969;
 }
 
 .site-main .comment-navigation,

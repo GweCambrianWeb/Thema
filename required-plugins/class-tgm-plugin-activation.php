@@ -162,16 +162,16 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 'menu_title'                     => __( "Llwytho Ategion", 'thema' ),
                 'installing'                     => __( "Llwytho Ategyn: %s", 'thema' ),
                 'oops'                           => __( "Aeth rhywbeth o'i le.", 'thema' ),
-                'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
-                'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
-                'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion." ), // %1$s = plugin name(s).
-                'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
-                'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
-                'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion." ), // %1$s = plugin name(s).
-                'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s." ), // %1$s = plugin name(s).
-                'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion." ), // %1$s = plugin name(s).
-                'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion" ),
-                'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion" ),
+                'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s.", "thema" ), // %1$s = plugin name(s).
+                'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s.", 'thema' ), // %1$s = plugin name(s).
+                'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion.", 'thema' ), // %1$s = plugin name(s).
+                'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s.", 'thema'), // %1$s = plugin name(s).
+                'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s.", 'thema' ), // %1$s = plugin name(s).
+                'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion.", 'thema' ), // %1$s = plugin name(s).
+                'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", 'thema' ), // %1$s = plugin name(s).
+                'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion.", "thema" ), // %1$s = plugin name(s).
+                'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion", 'thema'),
+                'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion", 'thema' ),
                 'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'thema' ),
                 'dashboard'                      => __( "Yn ol i'r dashfwrdd", 'thema' ),
                 'plugin_activated'               => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'thema' ),
@@ -717,12 +717,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                     $last_plugin = array_pop( $plugin_groups ); // Pop off last name to prep for readability.
                     $imploded    = empty( $plugin_groups ) ? '<em>' . $last_plugin . '</em>' : '<em>' . ( implode( ', ', $plugin_groups ) . '</em> and <em>' . $last_plugin . '</em>' );
 
-                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'tgmpa' ), $imploded, $count ) . '</p>';
+                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'thema' ), $imploded, $count ) . '</p>';
                 }
 
                 // Setup variables to determine if action links are needed.
-                $show_install_link  = $install_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ) . '</a>' : '';
-                $show_activate_link = $activate_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ) . '</a>'  : '';
+                $show_install_link  = $install_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'thema' ) . '</a>' : '';
+                $show_activate_link = $activate_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'thema' ) . '</a>'  : '';
 
                 // Define all of the action links.
                 $action_links = apply_filters(
@@ -1285,7 +1285,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             if ( ! isset( $installed_plugins[$item['file_path']] ) ) {
                 $actions = array(
                     'install' => sprintf(
-                        '<a href="%1$s" title="' . esc_attr__( 'Install', 'thema' ) . ' %2$s">' . __( 'Install', 'thema' ) . '</a>',
+                        '<a href="%1$s" title="' . esc_attr__( 'Llwytho', 'thema' ) . ' %2$s">' . __( 'Llwytho', 'thema' ) . '</a>',
                         esc_url(
                             wp_nonce_url(
                                 add_query_arg(
@@ -1309,7 +1309,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             elseif ( is_plugin_inactive( $item['file_path'] ) ) {
                 $actions = array(
                     'activate' => sprintf(
-                        '<a href="%1$s" title="' . esc_attr__( 'Activate', 'thema' ) . ' %2$s">' . __( 'Activate', 'thema' ) . '</a>',
+                        '<a href="%1$s" title="' . esc_attr__( 'Gweithredu', 'thema' ) . ' %2$s">' . __( 'Gweithredu', 'thema' ) . '</a>',
                         esc_url(
                             add_query_arg(
                                 array(
@@ -1385,10 +1385,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
             $columns = array(
                 'cb'     => '<input type="checkbox" />',
-                'plugin' => __( 'Plugin', 'thema' ),
-                'source' => __( 'Source', 'thema' ),
-                'type'   => __( 'Type', 'thema' ),
-                'status' => __( 'Status', 'thema' )
+                'plugin' => __( 'Ategyn', 'thema' ),
+                'source' => __( 'Ffynhonnell', 'thema' ),
+                'type'   => __( 'Math', 'thema' ),
+                'status' => __( 'Statws', 'thema' )
             );
 
             return $columns;
@@ -1406,8 +1406,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
         public function get_bulk_actions() {
 
             $actions = array(
-                'tgmpa-bulk-install'  => __( 'Install', 'thema' ),
-                'tgmpa-bulk-activate' => __( 'Activate', 'thema' ),
+                'tgmpa-bulk-install'  => __( 'Llwytho', 'thema' ),
+                'tgmpa-bulk-activate' => __( 'Gweithredu', 'thema' ),
             );
 
             return $actions;

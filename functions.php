@@ -61,23 +61,23 @@ function thema_setup() {
 			'is_automatic' => true,                   // Automatically activate plugins after installation or not.
 			'message'      => 'Llwytho yr ategion angenrheidiol.',                      // Message to output right before the plugins table.
 			'strings'      => array(
-					'page_title'                      => __( "Llwytho Ategion Angenrheidiol", 'tgmpa' ),
-					'menu_title'                      => __( "Llwytho Ategion", 'tgmpa' ),
-					'installing'                      => __( "Llwytho Ategyn: %s", 'tgmpa' ), // %s = plugin name.
-					'oops'                            => __( "Aeth rhywbeth o'i le gydag API yr ategyn.", 'tgmpa' ),
-					'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
-					'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s." ), // %1$s = plugin name(s).
-					'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion." ), // %1$s = plugin name(s).
-					'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
-					'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s." ), // %1$s = plugin name(s).
-					'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion." ), // %1$s = plugin name(s).
-					'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s." ), // %1$s = plugin name(s).
-					'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion." ), // %1$s = plugin name(s).
-					'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion" ),
-					'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion" ),
-					'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'tgmpa' ),
-					'plugin_activated'                => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'tgmpa' ),
-					'complete'                        => __( "Holl ategion wedi eu llwytho a'u gweithredu yn llwyddianus. %s", 'tgmpa' ), // %s = dashboard link.
+					'page_title'                      => __( "Llwytho Ategion Angenrheidiol", 'thema' ),
+					'menu_title'                      => __( "Llwytho Ategion", 'thema' ),
+					'installing'                      => __( "Llwytho Ategyn: %s", 'thema' ), // %s = plugin name.
+					'oops'                            => __( "Aeth rhywbeth o'i le gydag API yr ategyn.", 'thema' ),
+					'notice_can_install_required'     => _n_noop( "Mae'r thema yma angen yr ategyn canlynol: %1$s.", "Mae'r thema yma angen yr ategion canlynol: %1$s.", "thema" ), // %1$s = plugin name(s).
+					'notice_can_install_recommended'  => _n_noop( "Mae'r thema yma yn argymell yr ategyn canlynol: %1$s.", "Mae'r thema yma yn argymell yr ategion canlynol: %1$s.", "thema" ), // %1$s = plugin name(s).
+					'notice_cannot_install'           => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn cael llwytho yr ategion.", 'thema' ), // %1$s = plugin name(s).
+					'notice_can_activate_required'    => _n_noop( "Nid yw'r ategyn canlynol wedi ei weithredu: %1$s.", "Nid yw'r ategion canlynol wedi ei weithredu: %1$s.", 'thema' ), // %1$s = plugin name(s).
+					'notice_can_activate_recommended' => _n_noop( "Nid yw'r ategyn a argymhellir wedi ei weithredu: %1$s.", "Nid yw'r ategion a argymhellir wedi ei weithredu: %1$s.", 'thema' ), // %1$s = plugin name(s).
+					'notice_cannot_activate'          => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i weithredu yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn gweithredu yr ategion.", "Ymddiheuriadau, nid oes caniatad gennych i lwytho yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn llwytho yr ategion.", 'thema' ), // %1$s = plugin name(s).
+					'notice_ask_to_update'            => _n_noop( "Mae'r ategyn canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", "Mae'r ategion canlynol angen cael ei ddiweddaru i'r fersiwn diweddaraf er mwyn cadarnhau cydnawsedd a'r thema yma: %1$s.", 'thema' ), // %1$s = plugin name(s).
+					'notice_cannot_update'            => _n_noop( "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategyn %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategyn.", "Ymddiheuriadau, nid oes caniatad gennych i ddiweddaru yr ategion %s. Cysylltwch a gweinyddwr y wefan er mwyn diweddaru yr ategion.", 'thema' ), // %1$s = plugin name(s).
+					'install_link'                    => _n_noop( "Cychwyn llwytho'r ategyn", "Cychwyn llwytho'r ategion", 'thema' ),
+					'activate_link'                   => _n_noop( "Cychwyn gweithredu yr ategyn", "Cychwyn gweithredu yr ategion", 'thema' ),
+					'return'                          => __( "Mynd yn ol i Lwythwr Ategion Hanfodol", 'thema' ),
+					'plugin_activated'                => __( "Gweithredwyd yr ategyn yn llwyddianus.", 'thema' ),
+					'complete'                        => __( "Holl ategion wedi eu llwytho a'u gweithredu yn llwyddianus. %s", 'thema' ), // %s = dashboard link.
 					'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			)
 	);
@@ -292,6 +292,8 @@ function thema_ailgyfeirio_tud_groeso_ar_weithredu() {
 
 add_action('admin_menu', 'thema_tudalen_groeso');
 
+
+
 function thema_tudalen_groeso() {
 	add_menu_page(
 	'Croeso i Thema',
@@ -365,12 +367,12 @@ function cynnwys_tud_groeso_thema() {
 							echo '<li>'.$iaith.'</li>';
 						}
 						echo '</ul>';
-						echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith').'</a>';
+						echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith', 'thema').'</a>';
 					}
 				else{
 					echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>';
 					echo "<h2 style = 'text-align:center'>".__('Dim ieithoedd wedi eu llwytho','thema')."</h2>";
-					echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith').'</a>';
+					echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith', 'thema').'</a>';
 						}
 					}
 					else{
@@ -441,7 +443,7 @@ function thema_gychwynnol_gosod_panel_dashfwrdd() {
 
 	global $wp_meta_boxes;
 
-	$teitl_dashfwrdd_help = __("Help a'r Thema");
+	$teitl_dashfwrdd_help = __("Help a'r Thema", 'thema');
 
 	add_meta_box('thema_gychwynnol_dash_help', $teitl_dashfwrdd_help, 'thema_gychwynnol_dashfwrdd_help', 'dashboard', 'side', 'high');
 
@@ -452,15 +454,15 @@ function thema_gychwynnol_dashfwrdd_help() {
 	echo '<h1>'.__('Croeso i Thema.', 'thema').'</h1>';
 	echo '<p>'.__("Mae Thema wedi ei weithredu. Croeso i WordPress amlieithog.", 'thema').'</p>';
 	if(function_exists('pll_default_language')){
-		echo __('<h3>Iaith Ragosodedig y Wefan:</h3>');
+		echo __('<h3>Iaith Ragosodedig y Wefan:</h3>', 'thema');
 		echo pll_default_language('name');
-		echo __('<h3>Ieithoedd ar y Wefan</h3>');
+		echo __('<h3>Ieithoedd ar y Wefan</h3>', 'thema');
 		echo '<ul>';
 		foreach (pll_languages_list(array('fields' =>'name' )) as $iaith){
 			echo '<li>'.$iaith.'</li>';
 		}
 		echo '</ul>';
-		echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith').'</a>';
+		echo '<a href = "'.get_site_url().'/wp-admin/options-general.php?page=mlang" class ="button-primary">'.__('Ychwanegu Iaith', 'thema').'</a>';
 	}
 
 }
