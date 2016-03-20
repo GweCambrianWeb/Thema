@@ -646,13 +646,12 @@ a:active {
 
 
 
-/* Small menu. */
+/* Small menu.*/
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 	margin:0 auto;
-
-
+	height:auto;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -670,6 +669,45 @@ a:active {
 
 
 }
+.main-navigation.toggled ul,.main-navigation.toggled ul ul,.main-navigation.toggled ul ul ul {
+	position:static;
+	display:block;
+}
+
+.main-navigation.toggled ul li{
+	width:100%;
+	display:block;
+	clear:both;
+	text-align: center;
+	background-color: #404040;
+}
+.main-navigation.toggled ul ul li{
+
+	background-color: #585858;
+}
+.main-navigation.toggled ul ul ul li{
+
+	background-color: #696969;
+}
+
+.main-navigation.toggled ul{
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	background-color: #404040;
+	float: left;
+	margin: 0 auto;
+	width:100%;
+	max-width:100%;
+	position: static;
+	top: 2.7em;
+	z-index: 99999;
+	margin:0;
+	padding:0;
+	white-space: nowrap;
+	-webkit-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+	box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+}
+
 .main-navigation button{
 	margin: 0 auto;
 	color: transparent;
@@ -678,11 +716,6 @@ a:active {
 	height:50px
 }
 
-
-.main-navigation.toggled ul li{
-	float:none;
-	background-color:#696969;
-}
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
