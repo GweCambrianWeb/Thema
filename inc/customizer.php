@@ -32,24 +32,16 @@ function thema_customize_register( $wp_customize ) {
 	$wp_customize->add_setting("thema-logo-gwefan", array(
 				"default" => get_template_directory_uri()."/images/Thema_Logo.png",
 				"transport" => "refresh",
-				"type" => "theme_mod"
+				"type" => "theme_mod",
+				'sanitize_callback' => 'esc_url',
 		));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,
 		'thema-logo-gwefan', array(
 	      "label" => __("Logo'r Wefan", "thema"),
 				'section'    => 'title_tagline',
 				'settings'   => 'thema-logo-gwefan',
+
 		) ) );
-
-		/*$wp_customize->add_control(new WP_Customize_Control(
-		      $wp_customize, "thema-logo-gwefan",
-		      array(
-
-							"section" => "title_tagline",
-	            "type" => "media",
-							"settings" => "thema-logo-gwefan",
-		        )
-		    ));*/
 
 
 
@@ -59,12 +51,14 @@ function thema_customize_register( $wp_customize ) {
 	$wp_customize->add_setting("thema-url-facebook", array(
         "default" => "http://facebook.com/",
         "transport" => "refresh",
+				'sanitize_callback' => 'sanitize_text_field',
     ));
 
 		// Adio Gosodiad Twitter
 		$wp_customize->add_setting( 'thema-url-twitter' , array(
 			'default' => 'http://twitter.com/',
 			"transport" => "refresh",
+			'sanitize_callback' => 'sanitize_text_field',
 		));
 
 		$wp_customize->add_control( new WP_Customize_Control(
