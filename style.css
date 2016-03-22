@@ -282,7 +282,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #fff;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -668,6 +668,7 @@ a:active {
 	}
 
 
+
 }
 .main-navigation.toggled ul,.main-navigation.toggled ul ul,.main-navigation.toggled ul ul ul {
 	position:static;
@@ -682,7 +683,6 @@ a:active {
 	background-color: #404040;
 }
 .main-navigation.toggled ul ul li{
-
 	background-color: #585858;
 }
 .main-navigation.toggled ul ul ul li{
@@ -1049,12 +1049,17 @@ body{
 .site-branding{
 	padding:15px;
 	text-align:left;
-	margin-left:250px;
+	margin-left:150px;
 	color:#fff;
+}
+.site-branding img.thema-logo{
+	max-width:120px;
+	margin:15px;
+	float:left;
 }
 .site-title{
 	font-size:55px;
-	margin:0;
+	margin:10px 0;
 	color:#fff;
 }
 .site-title a{
@@ -1067,13 +1072,13 @@ body{
 }
 
 .thema-language-switch{
-	height:50px;
-	position:relative;
-	top:-100px;
-	right:20px;
+	height:75px;
 	width:auto;
 	float:right;
-	margin-right:100px;
+	margin-right:120px;
+	margin-top: -100px;
+	clear:both;
+
 
 }
 .thema-language-switch .lang-item{
@@ -1096,9 +1101,29 @@ body{
 
 .thema-language-switch .lang-item a:hover{
 	padding:15px;
-	color:#ac2223;
+	color:red;
 	border: 1px solid #dfacac;
 	background:#fff;
+}
+
+/* Eiconnau Cymdeithasol */
+.cyfryngau-cymdeithasol{
+	float:right;
+	clear:both;
+	margin-right:120px;
+	margin-top: -50px;
+}
+.cyfryngau-cymdeithasol ul{
+	list-style-type: none;
+}
+.cyfryngau-cymdeithasol ul li{
+	display:inline-block;
+	margin: 0 15px;
+}
+.cyfryngau-cymdeithasol ul li a{
+	color: #fff;
+	font-size: 3em;
+	text-align: right;
 }
 /*-----------------------------------
 * Menu? CSS
@@ -1194,7 +1219,7 @@ body{
 /*-------------------------------------------------------------
 ## Ymatebol
 --------------------------------------------------------------*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 930px) {
 	.content-area{
 		width:100%;
 		float:left;
@@ -1204,20 +1229,58 @@ body{
 		width:100%;
 		float:right;
 	}
-
+	#masthead{
+		height:400px;
+	}
 	.site-branding{
 		padding:15px;
 		margin: 0px;
-		text-align:center;
+		text-align:left;
 		color:#fff;
+		clear:both;
+	}
+	.site-branding img.thema-logo{
+		max-height:100px;
+		width:auto;
+		float:left;
 	}
 	.thema-language-switch{
-		height:50px;
-		position:relative;
-		top:0px;
-		right:40%;
-		margin:0 auto;
-
+		height:75px;
+		margin:0 100px;;
+	}
+	.cyfryngau-cymdeithasol{
+		float:left;
+		margin-left:-90px;
+	}
+	.main-navigation{
+		bottom:50px;
+		float
 	}
 
+}
+@media screen and (max-width: 37.5em) {
+	.site-branding, .site-description{
+		text-align: center;
+	}
+	.site-branding img.thema-logo{
+		margin:0 auto;
+		float:none;
+	}
+	.thema-language-switch{
+		height:75px;
+		width:100%;
+		clear:both;
+		float:none;
+		margin:20px auto;
+	}
+	.cyfryngau-cymdeithasol{
+		float:none;
+		width:100%;
+		clear:both;
+	}
+		.cyfryngau-cymdeithasol ul{
+			width:100%;
+			text-align:center;
+padding: 0 0 10px 0;
+		}
 }
