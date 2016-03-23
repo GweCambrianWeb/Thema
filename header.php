@@ -33,9 +33,17 @@
 			<div class = "thema-language-switch">
 				<?php
 					if(function_exists('pll_the_languages')){
+						$thema_number_of_lang = count(pll_languages_list());
+						if ($thema_number_of_lang >2){
+							$dropdown = 1;
+						}
+					else{
+						$dropdown = 0;
+					}
 						$args = array(
 							'show_names' => 1,
-							'hide_current' => false
+							'hide_current' => false,
+							'dropdown'=>$dropdown
 						);
 
 						pll_the_languages($args);

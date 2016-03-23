@@ -116,7 +116,7 @@ function thema_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'thema' ),
+		'primary' => esc_html__( 'Prif Ddewislen', 'thema' ),
 	) );
 
 	/*
@@ -180,7 +180,7 @@ function thema_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Troedyn 1', 'thema' ),
+		'name'          => esc_html__( 'Troedyn', 'thema' ),
 		'id'            => 'footer-widget-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -188,24 +188,7 @@ function thema_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Troedyn 2', 'thema' ),
-		'id'            => 'footer-widget-2',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Troedyn 3', 'thema' ),
-		'id'            => 'footer-widget-3',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+
 }
 add_action( 'widgets_init', 'thema_widgets_init' );
 
@@ -216,7 +199,6 @@ function thema_scripts() {
 	wp_enqueue_style( 'thema-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'thema-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'thema-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -378,15 +360,63 @@ function cynnwys_tud_groeso_thema() {
 					else{
 						echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>';
 						echo "<h2 style = 'text-align:center'>".__('Angen llwytho Polylang cyn ychwanegu ieithoedd','thema')."</h2>";
-
 					}
 
 				 ?>
 			</div>
 			<div class = "thema-tudgroeso-trydydd">
 
-				<?php echo '<p style = "text-align:center"><i class="fa fa-times-circle-o fa-align-center" style ="color:#981616;font-size:125px;"></i></p>'; ?>
-				<h2>Trydydd Chec yn Fama</h2>
+				<?php
+				if($polylang_loaded){
+					echo "<h1>".__("Ieithoedd", 'thema')."</h1>";
+					$rhestr_iaith = pll_languages_list(array('fields'=>'name'));
+					$cod_iaith = pll_languages_list();
+					echo '<table style = "width:100%;">';
+					?>
+					<style>
+					table td{
+						padding:5px 15px;
+					}
+					</style>
+					<?php
+					echo '<h2>'.__("Dyma rest o'r ieithoedd sydd wedi eu llwytho ar y wefan.", 'thema').'</h2>';
+					echo '<h3>'.__("Tudalennau", 'thema').'</h3>';
+					echo '<tr style = "text-align:left;"><th>'.__("C&ocirc;d Iaith", 'thema').'</th><th>Nifer</th></tr>';
+					foreach($cod_iaith as $iaith){
+
+						$nifer_tud = pll_count_posts($iaith, array('post_type'=>'page'));
+
+						if ($nifer_tud == 0){
+							echo '<tr style = "background-color:#981616;color:#fff;">';
+						}
+						else{
+							echo '<tr>';
+						}
+
+						echo '<td>'.$iaith.'</td><td>'.$nifer_tud.'</td></tr>';
+					}
+					echo '</table>';
+
+					echo '<h3>'.__("Cofnodion", 'thema').'</h3>';
+					echo '<table style = "width:100%;">';
+					echo '<tr style = "text-align:left;"><th>'.__("C&ocirc;d Iaith", 'thema').'</th><th>Nifer</th></tr>';
+					foreach($cod_iaith as $iaith){
+
+						$nifer_tud = pll_count_posts($iaith, array('post_type'=>'post'));
+
+						if ($nifer_tud == 0){
+							echo '<tr style = "background-color:#981616;color:#fff;">';
+						}
+						else{
+							echo '<tr>';
+						}
+
+						echo '<td>'.$iaith.'</td><td>'.$nifer_tud.'</td></tr>';
+					}
+					echo '</table>';
+
+				}
+				?>
 			</div>
 	</div>
 
