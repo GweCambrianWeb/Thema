@@ -17,16 +17,16 @@
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'thema' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<p><?php printf( wp_kses( __( 'Barod i gyhoeddi eich cofnod gyntaf? <a href="%1$s">Cychwynwch Yma</a>.', 'thema' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'thema' ); ?></p>
+			<p><?php esc_html_e( "Sori, ni ffeindiwyd dim a oedd yn cydweddu a'r termau chwilio. Ceisiwch eto gyda termau gwahanol os gwelwch yn dda.", 'thema' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'thema' ); ?></p>
+			<p><?php esc_html_e( 'Yn anffodus, dyden ni ddim yn gallu canfod beth yr ydych yn chwilio amdanynt. Efallai bydd chwilio yn helpu.', 'thema' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
