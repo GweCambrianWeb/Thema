@@ -529,7 +529,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 // All plugins are active, so we display the complete string and hide the plugin menu.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'thema' ) . '">' . __( 'Return to the Dashboard', 'thema' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . esc_url( network_admin_url().'/admin.php?page=tudalen-groeso-thema' ) . '" title="' . esc_attr__( 'Yn ol i dashfwrdd Thema', 'thema' ) . '">' . __( 'Yn ol i dashfwrdd Thema', 'thema' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 }
 
@@ -1172,15 +1172,15 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 }
                 // The plugin is from the WordPress repository.
                 else {
-                    $table_data[$i]['source'] = __( 'WordPress Repository', 'thema' );
+                    $table_data[$i]['source'] = __( 'Ffynhonell WordPress', 'thema' );
                 }
 
-                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'thema' ) : __( 'Recommended', 'thema' );
+                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Angen', 'thema' ) : __( 'Argymell', 'thema' );
 
                 if ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'thema' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Heb ei lwytho', 'thema' ) );
                 } elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'thema' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Wedi ei lwytho, ond heb weithredu', 'thema' ) );
                 }
 
                 $table_data[$i]['file_path'] = $plugin['file_path'];
@@ -1369,7 +1369,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
          */
         public function no_items() {
 
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'thema' ), network_admin_url() );
+            printf( __( 'Dim ategion i lwytho na gweithredu. <a href="%1$s" title="Yn ol i dashfwrdd Thema">Yn ol i dashfwrdd Thema</a>', 'thema' ), network_admin_url().'/admin.php?page=tudalen-groeso-thema' );
             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
         }
@@ -1936,12 +1936,12 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
                      */
                     public function install_strings() {
 
-                        $this->strings['no_package']          = __( 'Install package not available.', 'thema' );
-                        $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'thema' );
-                        $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'thema' );
-                        $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'thema' );
-                        $this->strings['process_failed']      = __( 'Plugin install failed.', 'thema' );
-                        $this->strings['process_success']     = __( 'Plugin installed successfully.', 'thema' );
+                        $this->strings['no_package']          = __( 'Pecyn llwytho ddim ar gael.', 'thema' );
+                        $this->strings['downloading_package'] = __( 'Lawrlwytho pecyn llwytho o <span class="code">%s</span>&#8230;', 'thema' );
+                        $this->strings['unpack_package']      = __( 'Dadbacio y pecyn&#8230;', 'thema' );
+                        $this->strings['installing_package']  = __( 'Llwytho yr ategyn&#8230;', 'thema' );
+                        $this->strings['process_failed']      = __( 'Llwytho yr ategyn wedi methu.', 'thema' );
+                        $this->strings['process_success']     = __( 'Llwythwyd yr ategyn yn llwyddiannus.', 'thema' );
 
                     }
 
@@ -1952,8 +1952,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
                      */
                     public function activate_strings() {
 
-                        $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'thema' );
-                        $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'thema' );
+                        $this->strings['activation_failed']  = __( 'Methwyd gweithredu yr ategyn.', 'thema' );
+                        $this->strings['activation_success'] = __( 'Gweithredwyd yr ategyn yn llwyddiannus.', 'thema' );
 
                     }
 
@@ -2066,19 +2066,19 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
                         // Automatic activation strings.
                         if ( TGM_Plugin_Activation::$instance->is_automatic ) {
-                            $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'thema' );
-                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'thema' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'thema' ) . '</span><span class="hidden">' . __( 'Hide Details', 'thema' ) . '</span>.</a>';
-                            $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'thema' );
-                            $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'thema' );
+                            $this->upgrader->strings['skin_upgrade_start']        = __( "Mae'r broses o lwytho a gweithredu yn cychwyn. Gall hyn gymeryd tipyn o amser ar rai gweinyddion.", 'thema' );
+                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s wedi ei llwytho a gweithredu yn llwyddiannus.', 'thema' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Dangos Manylion', 'thema' ) . '</span><span class="hidden">' . __( 'Cuddio Manylion', 'thema' ) . '</span>.</a>';
+                            $this->upgrader->strings['skin_upgrade_end']          = __( 'Mae pob gweithrediadau a llwytho wedi eu cwblhau.', 'thema' );
+                            $this->upgrader->strings['skin_before_update_header'] = __( 'Llwytho a Gweithredu Ategyn %1$s (%2$d/%3$d)', 'thema' );
                         }
                         // Default installation strings.
                         else {
-                            $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'thema' );
-                            $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'thema' );
-                            $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'thema' );
-                            $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'thema' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'thema' ) . '</span><span class="hidden">' . __( 'Hide Details', 'thema' ) . '</span>.</a>';
-                            $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'thema' );
-                            $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'thema' );
+                            $this->upgrader->strings['skin_upgrade_start']        = __( "Mae'r broses o lwytho a gweithredu yn cychwyn. Gall hyn gymeryd tipyn o amser ar rai gweinyddion.", 'thema' );
+                            $this->upgrader->strings['skin_update_failed_error']  = __( 'Cafwyd nam tra yn llwytho  %1$s: <strong>%2$s</strong>.', 'thema' );
+                            $this->upgrader->strings['skin_update_failed']        = __( 'Methwyd llwytho %1$s.', 'thema' );
+                            $this->upgrader->strings['skin_update_successful']    = __( 'Llwythwyd %1$s yn llwyddiannus.', 'thema' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Dangos Manylion', 'thema' ) . '</span><span class="hidden">' . __( 'Cuddio Manylion', 'thema' ) . '</span>.</a>';
+                            $this->upgrader->strings['skin_upgrade_end']          = __( 'Wedi llwyddo llwytho pob ategyn.', 'thema' );
+                            $this->upgrader->strings['skin_before_update_header'] = __( 'Yn Llwytho yr Ategyn %1$s (%2$d/%3$d)', 'thema' );
                         }
 
                     }
@@ -2170,7 +2170,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
                         // All plugins are active, so we display the complete string and hide the menu to protect users.
                         if ( empty( $complete ) ) {
-                            echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'thema' ) . '">' . __( 'Return to the Dashboard', 'thema' ) . '</a>' ) . '</p>';
+                            echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . esc_url( network_admin_url()."/admin.php?page=tudalen-groeso-thema" ) . '" title="' . esc_attr__( 'Yn ol i Dashfwrdd Thema', 'thema' ) . '">' . __( 'Yn ol i Dashfwrdd Thema', 'thema' ) . '</a>' ) . '</p>';
                             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                         }
 
