@@ -20,15 +20,15 @@ function the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'thema' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Fforio cofnodion', 'thema' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'thema' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Cofnodion Hyn', 'thema' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'thema' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Cofnodion newydd', 'thema' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -53,7 +53,7 @@ function the_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'thema' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Fforio Cofnodion', 'thema' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
@@ -83,12 +83,12 @@ function thema_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'thema' ),
+		esc_html_x( 'Cyhoeddwyd ar %s', 'dyddiad cofnod', 'thema' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'thema' ),
+		esc_html_x( 'gan %s', 'awdur y cofnod', 'thema' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -107,23 +107,23 @@ function thema_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'thema' ) );
 		if ( $categories_list && thema_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'thema' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Cyhoeddwyd yn %1$s', 'thema' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'thema' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'thema' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagiwyd %1$s', 'thema' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'thema' ), esc_html__( '1 Comment', 'thema' ), esc_html__( '% Comments', 'thema' ) );
+		comments_popup_link( esc_html__( 'Gadael Sylw', 'thema' ), esc_html__( '1 Sylw', 'thema' ), esc_html__( '% Sylw', 'thema' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', 'thema' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Golygu', 'thema' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -140,45 +140,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( esc_html__( 'Category: %s', 'thema' ), single_cat_title( '', false ) );
+		$title = sprintf( esc_html__( 'Categori: %s', 'thema' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
 		$title = sprintf( esc_html__( 'Tag: %s', 'thema' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( esc_html__( 'Author: %s', 'thema' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( esc_html__( 'Awdur: %s', 'thema' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( esc_html__( 'Year: %s', 'thema' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'thema' ) ) );
+		$title = sprintf( esc_html__( 'Blwyddyn: %s', 'thema' ), get_the_date( esc_html_x( 'Y', 'fformat dyddiad archif blynyddol', 'thema' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( esc_html__( 'Month: %s', 'thema' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'thema' ) ) );
+		$title = sprintf( esc_html__( 'Mis: %s', 'thema' ), get_the_date( esc_html_x( 'F Y', 'fformat dyddiad archif misol', 'thema' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( esc_html__( 'Day: %s', 'thema' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'thema' ) ) );
+		$title = sprintf( esc_html__( 'Dydd: %s', 'thema' ), get_the_date( esc_html_x( 'F j, Y', 'fformat dyddiad archif dyddiol', 'thema' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = esc_html_x( 'Asides', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Neilltu', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = esc_html_x( 'Galleries', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Galeriau', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = esc_html_x( 'Images', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Delweddau', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = esc_html_x( 'Videos', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Fideos', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = esc_html_x( 'Quotes', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Dyfyniadau', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = esc_html_x( 'Links', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Dolenni', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = esc_html_x( 'Statuses', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Statws', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = esc_html_x( 'Audio', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Sain', 'post format archive title', 'thema' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = esc_html_x( 'Chats', 'post format archive title', 'thema' );
+			$title = esc_html_x( 'Sgyrsiau', 'post format archive title', 'thema' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( esc_html__( 'Archives: %s', 'thema' ), post_type_archive_title( '', false ) );
+		$title = sprintf( esc_html__( 'Archif: %s', 'thema' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
 		$title = sprintf( esc_html__( '%1$s: %2$s', 'thema' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = esc_html__( 'Archives', 'thema' );
+		$title = esc_html__( 'Archifau', 'thema' );
 	}
 
 	/**
