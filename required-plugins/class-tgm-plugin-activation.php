@@ -1641,7 +1641,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( is_wp_error( $activate ) ) {
                     echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
                 } else {
-                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'thema' ), $imploded );
+                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'Gweithredwyd yr ategyn canlynol yn llwyddianus:', 'Gweithredwyd yr ategion canlynol yn llwyddianus:', $count, 'thema' ), $imploded );
                 }
 
                 // Update recently activated plugins option.
