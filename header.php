@@ -24,11 +24,16 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php
-			$thema_logo = get_theme_mod('thema-logo-gwefan');
-			?>
 
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class = "thema-logo" src = "<?php echo $thema_logo; ?>"/><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+				$thema_logo = get_theme_mod('thema-logo-gwefan');
+				?>
+
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<div class = "thema-logo-div">
+									<img class = "thema-logo" src = "<?php echo $thema_logo; ?>"/>
+							</div>
+				<?php bloginfo( 'name' ); ?></a></h1>
 			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 			<div class = "thema-language-switch">
 				<?php
