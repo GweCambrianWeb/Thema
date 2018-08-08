@@ -1,0 +1,80 @@
+@media only screen and (max-width: 769px) {
+	.site-branding img.thema-logo{
+		display: none;
+	}
+	.site-title, .site-description {
+		text-align: center;
+	}
+	/*
+	.site-description {
+		display: none;
+	}*/
+}
+
+/*
+@media screen and (max-width: 930px) {
+	.content-area{
+		width:100%;
+		float:left;
+	}
+
+	.widget-area{
+		width:100%;
+		float:right;
+	}
+	#masthead{
+		height:400px;
+	}
+	.site-branding{
+		padding:15px;
+		margin: 0px;
+		text-align:left;
+		color:#fff;
+		clear:both;
+	}
+	.site-branding img.thema-logo{
+		max-height:100px;
+		width:auto;
+		float:left;
+	}
+	.thema-language-switch{
+		height:75px;
+		margin:0 100px;;
+	}
+	.cyfryngau-cymdeithasol{
+		float:left;
+		margin-left:-90px;
+	}
+	.main-navigation{
+		bottom:50px;
+		float
+	}
+
+}
+@media screen and (max-width: 37.5em) {
+	.site-branding, .site-description{
+		text-align: center;
+	}
+	.site-branding img.thema-logo{
+		margin:0 auto;
+		float:none;
+	}
+	.thema-language-switch{
+		height:75px;
+		width:100%;
+		clear:both;
+		float:none;
+		margin:20px auto;
+	}
+	.cyfryngau-cymdeithasol{
+		float:none;
+		width:100%;
+		clear:both;
+	}
+	.cyfryngau-cymdeithasol ul{
+		width:100%;
+		text-align:center;
+		padding: 0 0 10px 0;
+	}
+}
+*/

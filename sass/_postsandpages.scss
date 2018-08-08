@@ -1,0 +1,62 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+.entry-title a{
+	color:#fff;
+}
+.entry-meta{
+	font-size: 1.2em;
+	color:#B1B1B1;
+}
+
+.entry-meta a{
+	color: #fff;
+}
+.entry-footer{
+	color:#B1B1B1;
+}
+.entry-footer a{
+	color: #fff;
+}
+.entry-footer span{
+	padding:0 3px;
+}
+.entry-footer .edit-link a{
+	background-color: #ac2223; /* Coch Thema */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	max-width: 250px;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+}
+.entry-footer .edit-link a:hover{
+	background-color: #EC3B3C;
+}
