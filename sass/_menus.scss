@@ -111,6 +111,12 @@
 	display: block;
 	margin:0 auto;
 	height:auto;
+	outline: none;
+}
+
+.menu-toggle:focus,
+.menu-toggle:active {
+	box-shadow: none;
 }
 
 @media screen and (min-width: 37.5em) {
