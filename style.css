@@ -606,26 +606,25 @@ a:active {
   /* line 70, sass/_menus.scss */
   #primary-menu {
     max-height: 50px;
-    background-color: transparent;
-    overflow: visible;
-    float: left; }
+    background-color: transparent; }
 
-  /* line 77, sass/_menus.scss */
+  /* line 75, sass/_menus.scss */
   #primary-menu > li {
     display: inline-block;
-    float: left; }
+    float: left;
+    white-space: nowrap; }
 
-  /* line 83, sass/_menus.scss */
+  /* line 81, sass/_menus.scss */
   #primary-menu > li:hover > a,
   #primary-menu > li.focus > a {
     border-bottom: 2px solid #fff; }
 
-  /* line 88, sass/_menus.scss */
+  /* line 86, sass/_menus.scss */
   #primary-menu li {
     top: 0;
     width: auto; }
 
-  /* line 93, sass/_menus.scss */
+  /* line 91, sass/_menus.scss */
   .sub-menu {
     float: left;
     overflow: hidden;
@@ -634,20 +633,20 @@ a:active {
     z-index: 1;
     text-align: left; }
 
-  /* line 102, sass/_menus.scss */
+  /* line 100, sass/_menus.scss */
   .sub-menu > li {
     padding: 0;
     background-color: #404040; }
 
-  /* line 107, sass/_menus.scss */
+  /* line 105, sass/_menus.scss */
   .sub-menu > li:hover {
     background-color: #5a5a5a; }
 
-  /* line 112, sass/_menus.scss */
+  /* line 110, sass/_menus.scss */
   #primary-menu > li:hover .sub-menu {
     display: block; }
 
-  /* line 116, sass/_menus.scss */
+  /* line 114, sass/_menus.scss */
   #primary-menu a {
     padding: 0 1em 0 1em; } }
 /*--------------------------------------------------------------

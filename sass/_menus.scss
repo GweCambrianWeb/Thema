@@ -70,14 +70,12 @@ $menu-text-colour: #fff;
 	#primary-menu {
 		max-height: 50px;
 		background-color: transparent;
-		overflow: visible;
-		float: left;
 	}
 
 	#primary-menu > li {
 		display: inline-block;
 		float:left;
-
+		white-space: nowrap;
 	}
 
 	#primary-menu > li:hover > a,
