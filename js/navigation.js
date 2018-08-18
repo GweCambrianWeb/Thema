@@ -19,6 +19,8 @@
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 
+	primaryMenu = document.getElementById('primary-menu');
+
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
 		button.style.display = 'none';
@@ -31,12 +33,12 @@
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
+		if ( -1 !== primaryMenu.className.indexOf( 'toggled' ) ) {
+			primaryMenu.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			container.className += ' toggled';
+			primaryMenu.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
@@ -61,11 +63,12 @@
 	 * Sets or removes .focus class on an element.
 	 */
 	function toggleFocus() {
+		console.log(this);
 		var self = this;
 
 		// Move up through the ancestors of the current link until we hit .nav-menu.
 		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
+			console.log(self);
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
@@ -78,4 +81,5 @@
 			self = self.parentElement;
 		}
 	}
+
 } )();

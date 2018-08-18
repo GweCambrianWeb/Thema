@@ -1,205 +1,120 @@
-.main-navigation {
-	/*clear: both;
-	display: block;*/
-	float: left;
-	width: 100%;
-	height:50px;
-	/*position:absolute;*/
-	bottom:20px;
-	text-align: center;
-}
+$menu-colour: #404040;
+$menu-text-colour: #fff;
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	max-width:90%;
-	width:1200px;
-	margin:0 auto;
-	text-align:center;
-}
-
-.main-navigation li {
-	float: left;
-	position: relative;
-	font-size: 18px;
-}
-
-.main-navigation a {
+#primary-menu a {
 	display: block;
-	text-decoration: none;
+	font-size: 20px;
 	height: 50px;
-	padding:15px 20px 0 15px;
-}
-.main-navigation a {
-	color:#fff;
-}
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	background-color: #404040;
-	float: left;
-	max-width:220px;
-	width:auto;
-	position: absolute;
-	top: 2.7em;
-	left: -999em;
-	z-index: 99999;
-	margin:0;
-	padding:0;
-	white-space: nowrap;
-	-webkit-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
-	-moz-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
-	box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
+	line-height: 50px;
+	color: $menu-text-colour;
 
 }
 
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+#primary-menu, .sub-menu{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	transition: max-height 0.5s;
 }
 
-.main-navigation ul ul a {
+@media screen and (max-width: 37.5em) {
+	#primary-menu, .sub-menu {
+		max-height: 0;
+		overflow: hidden;
+	}
 
-}
+	#menu-toggle {
+		margin: 0 auto;
+		color: transparent;
+		background: url("./images/Mobile_Menu.png") no-repeat center center;
+		width:50px;
+		height:50px;
+		outline: none;
+		box-shadow: none;
+	}
 
-.main-navigation ul ul li {
-	text-align:left;
-	font-size:14px;
-	clear: both;
-	display:block;
-	width:100%;
-}
+	#primary-menu {
+		background-color: $menu-colour;
+	}
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-	border-bottom: 2px solid #fff;
+	.sub-menu li {
+		background-color: lighten( $menu-colour, 10% );
+	}
 
+	#primary-menu.toggled {
+		max-height: 1000px;
 
-}
+	}
 
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-	border-bottom:1px solid #fff;
-	background-color: #656565;
-}
+	#primary-menu li:hover > .sub-menu,
+	#primary-menu li.focus > .sub-menu {
+		left: auto;
+		max-height: 1000px;
+	}
 
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
-}
+	#primary-menu > li:hover {
+		background-color: lighten( $menu-colour, 5% );
+	}
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
+	.sub-menu li:hover {
+		background-color: lighten( $menu-colour, 20% )
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
-	border-bottom: 2px solid #fff;
-}
-
-
-
-/* Small menu.*/
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-	margin:0 auto;
-	height:auto;
-	outline: none;
-}
-
-.menu-toggle:focus,
-.menu-toggle:active {
-	box-shadow: none;
+	}
 }
 
 @media screen and (min-width: 37.5em) {
-	.menu-toggle {
+	#menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
-		display: block;
+
+	#primary-menu {
+		max-height: 50px;
+		background-color: transparent;
+		overflow: visible;
+		float: left;
+	}
+
+	#primary-menu > li {
+		display: inline-block;
+		float:left;
 
 	}
-	.main-navigation ul{
-		width:100%;
+
+	#primary-menu > li:hover > a,
+	#primary-menu > li.focus > a{
+		border-bottom: 2px solid #fff;
+	}
+
+	#primary-menu li {
+		top:0;
+		width: auto;
+	}
+
+	.sub-menu{
+		float: left;
+		overflow: hidden;
+		display: none;
+		position: absolute;
+		z-index: 1;
+		text-align: left;
+	}
+
+	.sub-menu > li {
+		padding: 0;
+		background-color: $menu-colour;
+	}
+
+	.sub-menu > li:hover {
+		background-color: lighten( $menu-colour, 10% );
+
+	}
+
+	#primary-menu > li:hover .sub-menu {
 		display:block;
 	}
 
+	#primary-menu a{
+		padding: 0 1em 0 1em;
+	}
 
-
-}
-.main-navigation.toggled ul,.main-navigation.toggled ul ul,.main-navigation.toggled ul ul ul {
-	position:static;
-	display:block;
-}
-
-.main-navigation.toggled ul li{
-	width:100%;
-	display:block;
-	clear:both;
-	text-align: center;
-	background-color: #404040;
-}
-.main-navigation.toggled ul ul li{
-	background-color: #585858;
-}
-.main-navigation.toggled ul ul ul li{
-
-	background-color: #696969;
-}
-
-.main-navigation.toggled ul{
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	background-color: #404040;
-	float: left;
-	margin: 0 auto;
-	width:100%;
-	max-width:100%;
-	position: static;
-	top: 2.7em;
-	z-index: 99999;
-	margin:0;
-	padding:0;
-	white-space: nowrap;
-	-webkit-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
-	-moz-box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
-	box-shadow: -7px 7px 10px -6px rgba(0,0,0,0.75);
-}
-
-.main-navigation button{
-	margin: 0 auto;
-	color: transparent;
-	background:  url("./images/Mobile_Menu.png") no-repeat center center;
-	width:50px;
-	height:50px
-}
-
-
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
 }
