@@ -4,7 +4,7 @@ Theme URI: http://thema.cymru
 Author: Gwe Cambrian Web
 Author URI: http://cambrianweb.com
 Description: Thema - Thema Amlieithog a Hygyrch ar gyfer gwefannau amlieithog. A Multilingual and Accessible theme for Multilingual Websites.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thema
@@ -555,15 +555,16 @@ a:active {
   margin: 0;
   padding: 0;
   text-align: center;
-  transition: max-height 0.5s; }
+  transition: max-height 0.5s;
+  list-style-type: none; }
 
 @media screen and (max-width: 37.5em) {
-  /* line 21, sass/_menus.scss */
+  /* line 23, sass/_menus.scss */
   #primary-menu, .sub-menu {
     max-height: 0;
     overflow: hidden; }
 
-  /* line 26, sass/_menus.scss */
+  /* line 28, sass/_menus.scss */
   #menu-toggle {
     margin: 0 auto;
     color: transparent;
@@ -573,58 +574,59 @@ a:active {
     outline: none;
     box-shadow: none; }
 
-  /* line 36, sass/_menus.scss */
+  /* line 38, sass/_menus.scss */
   #primary-menu {
     background-color: #404040; }
 
-  /* line 40, sass/_menus.scss */
+  /* line 42, sass/_menus.scss */
   .sub-menu li {
     background-color: #5a5a5a; }
 
-  /* line 44, sass/_menus.scss */
+  /* line 46, sass/_menus.scss */
   #primary-menu.toggled {
     max-height: 1000px; }
 
-  /* line 49, sass/_menus.scss */
+  /* line 51, sass/_menus.scss */
   #primary-menu li:hover > .sub-menu,
   #primary-menu li.focus > .sub-menu {
     left: auto;
     max-height: 1000px; }
 
-  /* line 55, sass/_menus.scss */
+  /* line 57, sass/_menus.scss */
   #primary-menu > li:hover {
     background-color: #4d4d4d; }
 
-  /* line 59, sass/_menus.scss */
+  /* line 61, sass/_menus.scss */
   .sub-menu li:hover {
     background-color: #737373; } }
 @media screen and (min-width: 37.5em) {
-  /* line 66, sass/_menus.scss */
+  /* line 68, sass/_menus.scss */
   #menu-toggle {
     display: none; }
 
-  /* line 70, sass/_menus.scss */
+  /* line 72, sass/_menus.scss */
   #primary-menu {
     max-height: 50px;
-    background-color: transparent; }
+    background-color: transparent;
+    padding: 0 1em; }
 
-  /* line 75, sass/_menus.scss */
+  /* line 79, sass/_menus.scss */
   #primary-menu > li {
     display: inline-block;
     float: left;
     white-space: nowrap; }
 
-  /* line 81, sass/_menus.scss */
+  /* line 85, sass/_menus.scss */
   #primary-menu > li:hover > a,
   #primary-menu > li.focus > a {
     border-bottom: 2px solid #fff; }
 
-  /* line 86, sass/_menus.scss */
+  /* line 90, sass/_menus.scss */
   #primary-menu li {
     top: 0;
     width: auto; }
 
-  /* line 91, sass/_menus.scss */
+  /* line 95, sass/_menus.scss */
   .sub-menu {
     float: left;
     overflow: hidden;
@@ -633,20 +635,25 @@ a:active {
     z-index: 1;
     text-align: left; }
 
-  /* line 100, sass/_menus.scss */
+  /* line 104, sass/_menus.scss */
   .sub-menu > li {
     padding: 0;
     background-color: #404040; }
 
-  /* line 105, sass/_menus.scss */
+  /* line 109, sass/_menus.scss */
   .sub-menu > li:hover {
     background-color: #5a5a5a; }
 
-  /* line 110, sass/_menus.scss */
+  /* line 114, sass/_menus.scss */
   #primary-menu > li:hover .sub-menu {
     display: block; }
 
-  /* line 114, sass/_menus.scss */
+  /* line 119, sass/_menus.scss */
+  .sub-menu > li:hover > .sub-menu {
+    display: block;
+    position: relative; }
+
+  /* line 124, sass/_menus.scss */
   #primary-menu a {
     padding: 0 1em 0 1em; } }
 /*--------------------------------------------------------------
@@ -963,15 +970,12 @@ body {
 /* line 1, sass/_header.scss */
 #masthead {
   height: auto;
-  /*was 250px*/
-  /*padding: 25px 25px 0 25px;/
-  /*position:relative;*/
   background-color: #ac2223;
   -webkit-box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.75); }
 
-/* line 11, sass/_header.scss */
+/* line 9, sass/_header.scss */
 .site-branding {
   /*padding:15px;*/
   text-align: left;
@@ -982,7 +986,7 @@ body {
   clear: both;
   /*height: 150px;*/ }
 
-/* line 23, sass/_header.scss */
+/* line 21, sass/_header.scss */
 .site-branding img.thema-logo {
   max-width: 120px;
   margin-right: 15px;
@@ -1000,30 +1004,31 @@ body {
 
 }
 */
-/* line 42, sass/_header.scss */
+/* line 40, sass/_header.scss */
 .site-description {
   margin: -15px 0 0 0; }
 
-/* line 46, sass/_header.scss */
+/* line 44, sass/_header.scss */
 .thema-language-switch {
+  padding: 1.5em 1em 0 0;
   height: auto;
   width: auto;
   float: right;
   clear: both;
   display: block; }
 
-/* line 53, sass/_header.scss */
+/* line 52, sass/_header.scss */
 .thema-language-switch .lang-item {
   list-style: none;
   display: inline; }
 
-/* line 58, sass/_header.scss */
+/* line 57, sass/_header.scss */
 .thema-language-switch select {
   width: 200px;
   padding: 5px;
   color: #1f1f1f; }
 
-/* line 63, sass/_header.scss */
+/* line 62, sass/_header.scss */
 .thema-language-switch .lang-item a {
   border: 1px solid #fff;
   color: #fff;
@@ -1033,7 +1038,7 @@ body {
   transition-duration: 0.1s;
   transition-timing-function: linear; }
 
-/* line 75, sass/_header.scss */
+/* line 74, sass/_header.scss */
 .thema-language-switch .lang-item a:hover {
   padding: 15px;
   color: red;
@@ -1041,25 +1046,25 @@ body {
   background: #fff; }
 
 /* Eiconnau Cymdeithasol */
-/* line 83, sass/_header.scss */
+/* line 82, sass/_header.scss */
 .cyfryngau-cymdeithasol {
   text-align: center; }
 
-/* line 86, sass/_header.scss */
+/* line 85, sass/_header.scss */
 .cyfryngau-cymdeithasol ul {
   margin: 0 0;
   padding: 0; }
 
-/* line 90, sass/_header.scss */
+/* line 89, sass/_header.scss */
 .cyfryngau-cymdeithasol ul {
   list-style-type: none; }
 
-/* line 93, sass/_header.scss */
+/* line 92, sass/_header.scss */
 .cyfryngau-cymdeithasol ul li {
   display: inline-block;
   margin: 0 15px; }
 
-/* line 97, sass/_header.scss */
+/* line 96, sass/_header.scss */
 .cyfryngau-cymdeithasol ul li a {
   color: #fff;
   font-size: 2em;

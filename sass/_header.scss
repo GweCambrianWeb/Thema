@@ -1,7 +1,5 @@
 #masthead{
-	height: auto;/*was 250px*/
-	/*padding: 25px 25px 0 25px;/
-	/*position:relative;*/
+	height: auto;
 	background-color:#ac2223;
 	-webkit-box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
@@ -44,6 +42,7 @@
 }
 
 .thema-language-switch{
+	padding: 1.5em 1em 0 0;
 	height:auto;
 	width:auto;
 	float:right;
